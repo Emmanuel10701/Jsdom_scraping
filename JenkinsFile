@@ -1,0 +1,52 @@
+pipeline {
+    agent any
+
+    environment {
+        DOCKER_IMAGE = 'your_dockerhub_username/your_project_name'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                // Checkout the code from the Git repository
+                checkout scm
+            }
+        }
+
+        stage('Build') {
+            steps {
+                script {
+                    // Build the Docker image
+                    docker.build(DOCKER_IMAGE)
+                }
+            }
+        }
+
+        stage('Push to Docker Hub') {
+            steps {
+                script {
+                    // Login to Docker Hub and push the image
+                    docker.withRegistry('', 'dockerhub_credentials') {
+                        docker.image(DOCKER_IMAGE).push()
+                    }
+                }
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                script {
+                    // Run your deployment process (e.g., kubernetes, Docker, etc.)
+                    echo 'Deploying the app...'
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            // Clean up
+            cleanWs()
+        }
+    }
+}
