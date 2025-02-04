@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Scrape from "./component/scrape";
 
 const ProductCard = ({ product }) => {
   return (
