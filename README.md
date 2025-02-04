@@ -1,8 +1,25 @@
-# React + Vite
+# React + Vite Web Scraper
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a **React Vite** application that utilizes **JSDOM** for web scraping. The application extracts and processes data from web pages dynamically, displaying the scraped information within the UI.
 
-Currently, two official plugins are available:
+## Tech Stack
+- **Vite** - Fast development and build tool
+- **React** - Frontend framework for building UI components
+- **TypeScript** - For type safety and maintainability
+- **JSDOM** - A JavaScript-based headless browser used for web scraping
+- **Axios** - For making HTTP requests
+- **Tailwind CSS** - Utility-first CSS framework for styling
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- **Web Scraping with JSDOM** - Extracts specific data from web pages.
+- **Dynamic Content Rendering** - Displays scraped data in real-time.
+- **API Integration** - Fetches and processes external data using Axios.
+- **Styling with Tailwind CSS** - Provides a clean and responsive design.
+- **Error Handling** - Manages network errors and invalid responses.
+
+## Installation & Setup
+To run the project locally, follow these steps:
+
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-username/jsdom-webscraper.git
