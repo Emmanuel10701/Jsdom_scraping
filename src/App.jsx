@@ -10,15 +10,17 @@ const ProductCard = ({ product }) => {
         className="w-full h-64 object-cover"
       />
       <div className="p-6 bg-white">
-        <h3 className="text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">{product.name}</h3>
+        <h3 className="text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
+          {product.name}
+        </h3>
         <p className="text-sm text-gray-600 mt-2">{product.description}</p>
         <div className="flex items-center justify-between mt-4">
           <span className="text-xl font-bold text-green-600">${product.price}</span>
           <div className="flex space-x-2">
-            <button className="px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-all duration-200">
+            <button className="px-4 py-2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-full hover:bg-gradient-to-r hover:from-blue-600 hover:to-indigo-700 transition-all duration-200">
               Add to Cart
             </button>
-            <button className="px-4 py-2 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-all duration-200">
+            <button className="px-4 py-2 bg-gradient-to-r from-gray-700 to-gray-800 text-white rounded-full hover:bg-gradient-to-r hover:from-gray-800 hover:to-gray-900 transition-all duration-200">
               View Product
             </button>
           </div>
