@@ -3,12 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Example Domain</title>
+    <title>Product Showcase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <h1>Example Domain</h1>
-    <p>This domain is established to be used for illustrative examples in documents.</p>
-    <p>You may use this domain in literature without prior coordination or asking for permission.</p>
-    <a href="https://www.iana.org/domains/example">More information...</a>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-6">
+        <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">Product Showcase</h1>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Product Cards -->
+            <div class="bg-white rounded-lg shadow-lg p-4">
+                <img src="https://via.placeholder.com/300x200" alt="Product 1" class="w-full h-48 object-cover rounded-md">
+                <h3 class="text-lg font-semibold mt-2">Product 1</h3>
+                <p class="text-gray-600 text-sm">This is a great product.</p>
+                <span class="block font-bold text-green-600 mt-2">$20.00</span>
+                <button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">Add to Cart</button>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-4">
+                <img src="https://via.placeholder.com/300x200" alt="Product 2" class="w-full h-48 object-cover rounded-md">
+                <h3 class="text-lg font-semibold mt-2">Product 2</h3>
+                <p class="text-gray-600 text-sm">A high-quality item.</p>
+                <span class="block font-bold text-green-600 mt-2">$35.00</span>
+                <button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">Add to Cart</button>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-4">
+                <img src="https://via.placeholder.com/300x200" alt="Product 3" class="w-full h-48 object-cover rounded-md">
+                <h3 class="text-lg font-semibold mt-2">Product 3</h3>
+                <p class="text-gray-600 text-sm">Limited edition.</p>
+                <span class="block font-bold text-green-600 mt-2">$50.00</span>
+                <button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">Add to Cart</button>
+            </div>
+
+            <!-- Add 13 more products following the same structure -->
+            <div class="bg-white rounded-lg shadow-lg p-4">
+                <img src="https://via.placeholder.com/300x200" alt="Product 4" class="w-full h-48 object-cover rounded-md">
+                <h3 class="text-lg font-semibold mt-2">Product 4</h3>
+                <p class="text-gray-600 text-sm">Affordable and stylish.</p>
+                <span class="block font-bold text-green-600 mt-2">$25.00</span>
+                <button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">Add to Cart</button>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-4">
+                <img src="https://via.placeholder.com/300x200" alt="Product 5" class="w-full h-48 object-cover rounded-md">
+                <h3 class="text-lg font-semibold mt-2">Product 5</h3>
+                <p class="text-gray-600 text-sm">Durable and reliable.</p>
+                <span class="block font-bold text-green-600 mt-2">$40.00</span>
+                <button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">Add to Cart</button>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-4">
+                <img src="https://via.placeholder.com/300x200" alt="Product 6" class="w-full h-48 object-cover rounded-md">
+                <h3 class="text-lg font-semibold mt-2">Product 6</h3>
+                <p class="text-gray-600 text-sm">Best-selling item.</p>
+                <span class="block font-bold text-green-600 mt-2">$30.00</span>
+                <button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">Add to Cart</button>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-4">
+                <img src="https://via.placeholder.com/300x200" alt="Product 7" class="w-full h-48 object-cover rounded-md">
+                <h3 class="text-lg font-semibold mt-2">Product 7</h3>
+                <p class="text-gray-600 text-sm">Perfect for everyday use.</p>
+                <span class="block font-bold text-green-600 mt-2">$22.00</span>
+                <button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">Add to Cart</button>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-4">
+                <img src="https://via.placeholder.com/300x200" alt="Product 8" class="w-full h-48 object-cover rounded-md">
+                <h3 class="text-lg font-semibold mt-2">Product 8</h3>
+                <p class="text-gray-600 text-sm">Highly recommended.</p>
+                <span class="block font-bold text-green-600 mt-2">$28.00</span>
+                <button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">Add to Cart</button>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-4">
+                <img src="https://via.placeholder.com/300x200" alt="Product 9" class="w-full h-48 object-cover rounded-md">
+                <h3 class="text-lg font-semibold mt-2">Product 9</h3>
+                <p class="text-gray-600 text-sm">Exclusive design.</p>
+                <span class="block font-bold text-green-600 mt-2">$60.00</span>
+                <button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">Add to Cart</button>
+            </div>
+
+            <div class="bg-white rounded-lg shadow-lg p-4">
+                <img src="https://via.placeholder.com/300x200" alt="Product 10" class="w-full h-48 object-cover rounded-md">
+                <h3 class="text-lg font-semibold mt-2">Product 10</h3>
+                <p class="text-gray-600 text-sm">Great gift idea.</p>
+                <span class="block font-bold text-green-600 mt-2">$45.00</span>
+                <button class="mt-4 w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition">Add to Cart</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
