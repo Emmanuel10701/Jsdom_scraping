@@ -3,20 +3,25 @@ pipeline {
 
     environment {
         DOCKER_IMAGE = 'your_dockerhub_username/your_project_name'
+        DOCKER_CREDENTIALS = 'dockerhub_credentials' // Update with your credentials ID
+        CONTAINER_NAME = 'your_container_name' // Define your container name
+        DEPLOY_SERVER = 'your_server_ip_or_hostname' // Define your deployment server
     }
 
     stages {
         stage('Checkout') {
             steps {
-                // Checkout the code from the Git repository
-                checkout scm
+                script {
+                    echo 'Checking out the code from the repository...'
+                    checkout scm
+                }
             }
         }
 
         stage('Build') {
             steps {
                 script {
-                    // Build the Docker image
+                    echo 'Building the Docker image...'
                     docker.build(DOCKER_IMAGE)
                 }
             }
@@ -25,9 +30,9 @@ pipeline {
         stage('Push to Docker Hub') {
             steps {
                 script {
-                    // Login to Docker Hub and push the image
-                    docker.withRegistry('', 'dockerhub_credentials') {
-                        docker.image(DOCKER_IMAGE).push()
+                    echo 'Logging into Docker Hub and pushing the image...'
+                    docker.withRegistry('', DOCKER_CREDENTIALS) {
+                        docker.image(DOCKER_IMAGE).push('latest')
                     }
                 }
             }
@@ -36,8 +41,20 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    // Run your deployment process (e.g., kubernetes, Docker, etc.)
-                    echo 'Deploying the app...'
+                    echo 'Deploying the application...'
+
+                    // Stop and remove the existing container (if any)
+                    sh """
+                        docker stop ${CONTAINER_NAME} || true
+                        docker rm ${CONTAINER_NAME} || true
+                    """
+
+                    // Run the new container
+                    sh """
+                        docker run -d --name ${CONTAINER_NAME} -p 80:80 ${DOCKER_IMAGE}:latest
+                    """
+
+                    echo 'Deployment successful!'
                 }
             }
         }
@@ -45,8 +62,22 @@ pipeline {
 
     post {
         always {
-            // Clean up
-            cleanWs()
+            script {
+                echo 'Pipeline execution completed.'
+                cleanWs() // Clean workspace after execution
+            }
+        }
+
+        success {
+            script {
+                echo 'Pipeline executed successfully!'
+            }
+        }
+
+        failure {
+            script {
+                echo 'Pipeline failed! Check logs for details.'
+            }
         }
     }
 }
